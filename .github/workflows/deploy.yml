@@ -1,0 +1,19 @@
+name: Deploy to Puter
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy website
+        uses: HeyPuter/puter-subdomain-deploy-action@v1
+        with:
+          subdomain: rey-hello-site            # publishes to my-site.puter.site
+          source_path: dist             # the folder to deploy (e.g. your build output)
+          puter_path: ~/Sites/rey-hello-site/   # where to store the files on Puter
+          puter_token: ${{ secrets.PUTER_TOKEN }}
