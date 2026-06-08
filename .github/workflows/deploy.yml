@@ -11,9 +11,9 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Deploy website
-        uses: HeyPuter/puter-subdomain-deploy-action@v1.0.5
+        uses: HeyPuter/puter-subdomain-deploy-action@v1
         with:
-          subdomain: rey-hello-site2            # publishes to my-site.puter.site
-          source_path: dist             # the folder to deploy (e.g. your build output)
-          puter_path: ~/Sites/rey-hello-site/   # where to store the files on Puter
+          subdomain: rey-hello-site2
+          source_path: dist
+          puter_path: ~/Sites/rey-hello-site/
           puter_token: ${{ secrets.PUTER_TOKEN }}
